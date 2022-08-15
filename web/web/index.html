@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <style>
+        /*C30310*/
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: white;
+        }
+
+        .header {
+            height: 50px;
+            line-height: 50px;
+            background: #C30310;
+            color: white;
+        }
+
+        .header .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header .btn-list {
+            overflow: hidden;
+            float: right;
+        }
+
+        .header .btn-list .btn-item {
+            float: left;
+            padding: 0 5px;
+        }
+
+        .logo {
+            overflow: hidden;
+            background: #F5F5F5;
+        }
+
+        .logo .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 100px;
+        }
+
+        .logo .contain .img {
+            height: 100px;
+            float: left;
+        }
+
+        .logo .contain .img img {
+            height: 100px;
+        }
+
+        .logo .contain .text-list {
+            float: left;
+            font-size: 30px;
+            padding: 14px 0;
+        }
+
+        .logo .contain .text-list .text {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .logo .contain .text-list .desc {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .nav {
+            background: #F5F5F5;
+        }
+
+        .nav .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0px 5px;
+        }
+
+        .nav .nav-item {
+            float: left;
+            margin: 0 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 60px;
+        }
+
+        .nav .nav-item.active {
+            border-bottom: 6px solid #C30310;
+        }
+
+        .nav .search-btn {
+            float: right;
+            border: 1px solid #999;
+            background: white;
+            padding: 2px 10px;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-top: 18px;
+        }
+
+        .nav .search-btn input {
+            float: left;
+            border: none;
+            width: 150px;
+            height: 20px;
+        }
+
+        .nav .search-btn img {
+            float: right;
+            width: 20px;
+            height: 20px;
+        }
+
+
+        .main-content {
+            overflow: hidden;
+            width: 1100px;
+            margin: 10px auto;
+        }
+
+        .main-content .banner {
+            overflow: hidden;
+        }
+
+        .main-content .banner .banner-img {
+            width: 850px;
+            height: 208px;
+            float: left;
+            display: block;
+        }
+
+        .main-content .banner .icon-btn-list {
+            width: 240px;
+            float: right;
+            border: 1px solid #ccc;
+            background: white;
+        }
+
+        .main-content .banner .icon-btn-list .icon-btn-item {
+            margin: 14px;
+            background: #F5F5F5;
+            overflow: hidden;
+            padding: 10px 40px;
+            color: #C30310;
+        }
+
+        .main-content .banner .icon-btn-list .icon-btn-item img {
+            width: 30px;
+            height: 30px;
+            float: left;
+        }
+
+        .main-content .banner .icon-btn-list .icon-btn-item .text {
+            float: left;
+            line-height: 30px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .news {
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .news .news-left {
+            float: left;
+            width: 520px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 350px;
+        }
+
+        .news .news-left .news-btn {
+            overflow: hidden;
+        }
+
+        .news .news-left .news-btn .btn-item {
+            float: left;
+            line-height: 40px;
+            width: 120px;
+            text-align: center;
+            font-size: 20px;
+            background: #F5F5F5;
+            color: black;
+            font-weight: 700;
+        }
+
+        .news .news-left .news-btn .btn-item.active {
+            background: #C30310;
+            color: white;
+        }
+
+        .news .news-left .news-btn .more-btn {
+            float: left;
+            line-height: 40px;
+            width: 120px;
+            text-align: right;
+            font-size: 12px;
+            background: #F5F5F5;
+            color: #999;
+            font-weight: 700;
+            padding-right: 20px;
+        }
+
+        .news .news-left .news-title {
+            padding: 5px 0;
+            overflow: hidden;
+        }
+
+        .news .news-left .news-title .title-hot {
+            line-height: 30px;
+            font-size: 16px;
+            background: #C30310;
+            color: white;
+            float: left;
+            padding: 1px 15px;
+        }
+
+        .news .news-left .news-title .title-text {
+            float: left;
+            color: #C30310;
+            line-height: 30px;
+            font-size: 20px;
+            padding: 1px 5px;
+            margin: 0 5px;
+        }
+
+        .news .news-left .news-list {
+            overflow: hidden;
+        }
+
+        .news .news-left .news-list .news-item {
+            padding: 15px 0;
+        }
+
+        .news .news-left .news-list .news-item .news-item-text1 {
+            font-size: 24px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        .news .news-left .news-list .news-item .news-item-text2 {
+            font-size: 16px;
+            color: #474747;
+            padding: 5px 0;
+        }
+
+        .news .news-left .news-list .news-item .news-item-text3 {
+            font-size: 10px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        .news .news-right {
+            float: right;
+            width: 540px;
+        }
+
+        .news .news-right .right-content {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .news .news-right .right-content .news-btn {
+            overflow: hidden;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item {
+            float: left;
+            color: #666;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 4px 5px;
+            margin: 0 5px;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item.active {
+            color: #C30310;
+            border-bottom: 2px solid #C30310;
+        }
+
+        .news .news-right .right-content .news-item {
+            padding: 15px 0;
+        }
+
+        .news .news-right .right-content .news-item .news-item-text1 {
+            font-size: 24px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .news .news-right .right-content .news-item .news-item-text2 {
+            font-size: 16px;
+            color: #474747;
+            padding: 5px 0;
+            text-decoration: none;
+        }
+
+        .news .news-right .right-content .news-item .news-item-text3 {
+            font-size: 10px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        .news .news-right .import-list {
+            padding: 20px 0 10px;
+            overflow: hidden;
+        }
+
+        .news .news-right .import-list .import-title {
+            float: left;
+            width: 80px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 32px;
+            font-weight: 700;
+            padding: 10px 20px;
+            background: #C30310;
+            color: white;
+        }
+
+        .news .news-right .import-list .import-item {
+            float: left;
+            font-size: 12px;
+            text-align: center;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+        }
+
+        .news .news-right .import-list .import-item img {
+            height: 50px;
+            display: block;
+        }
+
+        .news .news-right .import-list .import-item p {
+            width: 60px;
+            padding-left: 4px;
+        }
+
+        .footer {
+            overflow: hidden;
+            background: #C30310;
+            color: white;
+            line-height: 50px;
+        }
+
+        .footer .left {
+            width: 48%;
+            float: left;
+            text-align: right;
+        }
+
+        .footer .center {
+            width: 4%;
+            float: left;
+            text-align: center;
+        }
+
+        .footer .right {
+            width: 48%;
+            float: left;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="contain">
+            <div class="btn-list">
+                <a href="./login.html" style="color: #fff">
+                <div class="btn-item">登录</div></a>
+                <div class="btn-item">|</div>
+                <a href="./register.html" style="color: #fff">
+                <div class="btn-item">注册</div></a>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="contain">
+            <div class="img">
+                <img src="images/国徽.png" />
+            </div>
+            <div class="text-list">
+                <div class="text">基层公开综合服务监管系统</div>
+                <div class="desc">Basic-level public comprehensive service supervision system</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="contain">
+            <a href="./index.html" style="color: #000">
+                <div class="nav-item active">首页</div>
+            </a>
+            <a href="./jcgk.html" style="color: #000">
+                <div class="nav-item">基层公开</div>
+            </a>
+            <a href="http://www.chengdu.gov.cn/chengdu/c131029/zcwj_list.shtml" target="_blank"style="color: #000">
+                <div class="nav-item">政策法规</div>
+            </a>
+            <a href="./bmfw.html" style="color: #000">
+                <div class="nav-item">便民服务</div>
+            </a>
+            <a href="./gthd_xinxiang.html" style="color: #000">
+                <div class="nav-item">沟通互动</div>
+            </a>
+            <a href="./jdgl.html" style="color: #000">
+                <div class="nav-item">监督管理</div>
+            </a>
+            <div class="nav-item">服务发展</div>
+
+            <div class="search-btn">
+                <input type="text" placeholder="请输入你想搜索的内容" />
+                <img src="images/icon-search.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <div class="banner">
+            <img src="images/天安门.jpg" class="banner-img" />
+
+            <div class="icon-btn-list">
+                <div class="icon-btn-item">
+                    <img src="images/icon-cred.png" />
+                    <div class="text">统一身份认证</div>
+                </div>
+                <div class="icon-btn-item">
+                    <img src="images/icon-auth.png" />
+                    <div class="text">统一权限管理</div>
+                </div>
+                <a href="./yhgl.html" target="_blank">
+                <div class="icon-btn-item">
+                    <img src="images/icon-user.png" />
+                    <div class="text">统一用户管理</div>
+                </div></a>
+            </div>
+        </div>
+
+        <div class="news">
+            <div class="news-left">
+                <div class="news-btn">
+                    <div class="btn-item active">新闻资讯</div>
+                    <div class="btn-item">通知公告</div>
+                    <div class="more-btn">更多>></div>
+                </div>
+                <div class="news-title">
+                    <div class="title-hot">头条</div>
+                    <a href="http://scnews.newssc.org/system/20220813/001290749.html" target="_blank">
+                        <div class="title-text">成都8月12日新冠肺炎无本土新增</div>
+                    </a>
+                </div>
+                <div class="news-list">
+                    <div class="news-item">
+                        <a href="https://baijiahao.baidu.com/s?id=1740665554485876888&wfr=spider&for=pc"
+                            target="_blank">
+                            <div class="news-item-text2">中国空间站将再添新房间</div>
+                        </a>
+                        <a href="https://baijiahao.baidu.com/s?id=1740557277490110782&wfr=spider&for=pc"
+                            target="_blank">
+                            <div class="news-item-text2">多国驻华大使坚决反对佩洛西窜访中国台湾地区</div>
+                        </a>
+                        <a href="https://baijiahao.baidu.com/s?id=1740950321052683459&wfr=spider&for=pc"
+                            target="_blank">
+                            <div class="news-item-text2">今年首发最高级别高温红色预警</div>
+                        </a>
+                        <a href="http://scnews.newssc.org/system/20220813/001290706.html" target="_blank">
+                            <div class="news-item-text2">成都轨道交通累计客运量突破90亿乘次</div>
+                        </a>
+                        <a href="http://scnews.newssc.org/system/20220813/001290748.html" target="_blank">
+                            <div class="news-item-text2">成都双流国际机场温馨提示：即日起，进入航站楼不再查验核酸检测阴性证明</div>
+                        </a>
+                        <a href="https://www.chinanews.com.cn/scroll-news/news1.html" target="_blank">
+                            <div class="news-item-text2">【四川百名统战人说统战事】四川佛教协会副会长释智海 致力于推动佛教中国化的实践者</div>
+                        </a>
+                        <a href="https://www.chinanews.com.cn/sh/2022/08-12/9825796.shtml" target="_blank">
+                            <div class="news-item-text2">海南有序组织游客返程 首批660名滞留海口游客乘机离岛</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-right">
+                <div class="right-content">
+                    <div class="news-btn">
+                        <div class="btn-item active">部门动态</div>
+                        <div class="btn-item">基层动态</div>
+                    </div>
+                    <div class="news-item">
+                        <a href="http://www.chengdu.gov.cn/chengdu/c150874/2022-07/13/content_6005518dad1b445cada54d3a1d652279.shtml"
+                            target="_blank">
+                            <div class="news-item-text2">成都市人民政府第174次常务会议</div>
+                        </a>
+                        <a href="http://www.chengdu.gov.cn/chengdu/c131029/zcwjney.shtml?id=139884&tn=6&wz=%E6%94%BF%E7%AD%96%E6%96%87%E4%BB%B6&index=AO000B02003202200078"
+                            target="_blank">
+                            <div class="news-item-text2">成都市人民政府关于进一步加强土地出让及供后管理的实施意见</div>
+                        </a>
+                        <a href="http://www.chengdu.gov.cn/chengdu/c131029/zcwjney.shtml?id=139882&tn=6&wz=%E6%94%BF%E7%AD%96%E6%96%87%E4%BB%B6&index=AO000B02003202200076"
+                            target="_blank">
+                            <div class="news-item-text2">成都市人民政府办公厅关于印发成都市突发地质灾害应急预案（试行）的通知</div>
+                        </a>
+                        <a href="http://www.chengdu.gov.cn/chengdu/c131029/zcwjney.shtml?id=3387824&tn=2&wz=%E6%94%BF%E7%AD%96%E8%A7%A3%E8%AF%BB&index=AO0B0200422202200015"
+                            target="_blank">
+                            <div class="news-item-text2">《成都市防止耕地撂荒的十条措施》的政策解读</div>
+                        </a>
+                        <a href="http://www.chengdu.gov.cn/chengdu/c131029/zcwjney.shtml?id=3387833&tn=2&wz=%E6%94%BF%E7%AD%96%E8%A7%A3%E8%AF%BB&index=AO0B0200422202200016"
+                            target="_blank">
+                            <div class="news-item-text2">《成都市优化交通运输结构促进城市绿色低碳发展行动方案》和《成都市优化交通运输结构促进城市绿色低碳发展政策措施》的政策解读
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="import-list">
+                    <div class="import-title">重要信息转载</div>
+                    <div class="import-item">
+                        <a href="http://www.gov.cn/xinwen/yaowen.htm" target="_blank" style="color: #000">
+                            <img src="images/国徽.png" />
+                            <p>中国政府网信息</p>
+                        </a>
+                    </div>
+                    <div class="import-item">
+                        <a href="http://www.chengdu.gov.cn/chengdu/c10112200311/common_list.shtml?tdsourcetag=s_pcqq_aiomsg"
+                            target="_blank" style="color: #000">
+                            <img src="images/国徽.png" />
+                            <p>省政府重要信息</p>
+                        </a>
+                    </div>
+                    <div class="import-item">
+                        <a href="https://www.sc.gov.cn/10462/wza2012/cwh/cwh.shtml" target="_blank" style="color: #000">
+                            <img src="images/国徽.png" />
+                            <p>省政府常务会议</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="left">
+            蜀ICP备XXXXXXXX号
+        </div>
+        <div class="center">
+            |
+        </div>
+        <div class="right">
+            联系我们
+        </div>
+    </div>
+
+</body>
+
+</html>

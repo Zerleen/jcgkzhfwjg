@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>统一用户管理</title>
+
+    <style>
+        /*C30310*/
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: white;
+        }
+
+        .header {
+            height: 50px;
+            line-height: 50px;
+            background: #C30310;
+            color: white;
+        }
+
+        .header .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header .btn-list {
+            overflow: hidden;
+            float: right;
+        }
+
+        .header .btn-list .btn-item {
+            float: left;
+            padding: 0 5px;
+        }
+
+        .logo {
+            overflow: hidden;
+            background: #F5F5F5;
+        }
+
+        .logo .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 100px;
+        }
+
+        .logo .contain .img {
+            height: 100px;
+            float: left;
+        }
+
+        .logo .contain .img img {
+            height: 100px;
+        }
+
+        .logo .contain .text-list {
+            float: left;
+            font-size: 30px;
+            padding: 14px 0;
+        }
+
+        .logo .contain .text-list .text {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .logo .contain .text-list .desc {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .nav {
+            background: #F5F5F5;
+        }
+
+        .nav .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0px 5px;
+        }
+
+        .nav .nav-item {
+            float: left;
+            margin: 0 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 60px;
+        }
+
+        .nav .nav-item.active {
+            border-bottom: 6px solid #C30310;
+        }
+
+        .nav .search-btn {
+            float: right;
+            border: 1px solid #999;
+            background: white;
+            padding: 2px 10px;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-top: 18px;
+        }
+
+        .nav .search-btn input {
+            float: left;
+            border: none;
+            width: 150px;
+            height: 20px;
+        }
+
+        .nav .search-btn img {
+            float: right;
+            width: 20px;
+            height: 20px;
+        }
+
+
+        .main-content {
+            overflow: hidden;
+            width: 1100px;
+            margin: 10px auto;
+        }
+
+        .main-content .page a,
+        .main-content .page span {
+            margin: 0 8px;
+            padding: 0 5px;
+            text-align: center;
+            font-size: 14px;
+            color: #474747;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .main-content .page span {
+            color: #fff;
+            background-color: #C30310;
+        }
+
+        .news {
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .news .news-right {
+            float: right;
+            width: 1100px;
+        }
+
+        .news .news-right .division {
+            position: absolute;
+            width: 1080px;
+            height: 0;
+
+            border: 1px dashed rgb(77, 77, 77);
+        }
+
+        .news .news-right .right-content {
+            float: center;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .form-content {
+            overflow: hidden;
+            width: 1070px;
+            text-align: center;
+            margin: auto;
+            align-content: center;
+        }
+
+        .form-content .form-search {
+            float: left;
+            font-size: 20;
+            margin: 5px;
+            color: #ddd;
+        }
+
+        .form-table {
+            float: center;
+            width: 1070px;
+            padding: 10px;
+            overflow: hidden;
+            text-align: center;
+            margin: auto;
+            align-content: center;
+        }
+
+        input[type="text1"] {
+            width: 200px;
+            height: 42;
+            padding: 3px;
+            border-radius: 3px;
+            border-color: #F5F5F5;
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        a {
+            text-decoration: none
+        }
+        
+        a[role="button"] {
+            color: #C30310;
+        }
+
+        input[type="submit"] {
+            float: center;
+            width: 100px;
+            height: 42;
+            border-radius: 9px;
+            border-color: #F5F5F5;
+            background-color: #C30310;
+            font-size: 18px;
+            color: white;
+        }
+
+        input[type="button"] {
+            float: center;
+            width: 100px;
+            height: 42;
+            border-radius: 9px;
+            border-color: #F5F5F5;
+            background-color: #C30310;
+            font-size: 18px;
+            color: white;
+        }
+
+        .news .news-right .right-content .news-btn {
+            overflow: hidden;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item {
+            float: left;
+            line-height: 40px;
+            width: 210px;
+            text-align: center;
+            font-size: 20px;
+            background: #F5F5F5;
+            color: black;
+            font-weight: 700;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item1 {
+            float: left;
+            line-height: 40px;
+            width: 150px;
+            text-align: center;
+            font-size: 20px;
+            background: #F5F5F5;
+            color: black;
+            font-weight: 700;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item2 {
+            float: left;
+            line-height: 40px;
+            width: 180px;
+            text-align: center;
+            font-size: 20px;
+            background: #F5F5F5;
+            color: black;
+            font-weight: 700;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item.active {
+            background: #C30310;
+            color: white;
+        }
+
+        .news .news-right .right-content .news-btn1 {
+            overflow: hidden;
+        }
+
+        .news .news-right .right-content .news-btn1 .btn-item1 {
+            float: left;
+            color: #666;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 4px 5px;
+            margin: 0 5px;
+        }
+
+        .news .news-right .right-content .news-btn1 .btn-item1.active1 {
+            color: #C30310;
+            border-bottom: 3px solid #C30310;
+        }
+
+        .news .news-right .right-content .news-item {
+            padding: 15px 0;
+        }
+
+        .footer {
+            overflow: hidden;
+            background: #C30310;
+            color: white;
+            line-height: 50px;
+        }
+
+        .footer .left {
+            width: 48%;
+            float: left;
+            text-align: right;
+        }
+
+        .footer .center {
+            width: 4%;
+            float: left;
+            text-align: center;
+        }
+
+        .footer .right {
+            width: 48%;
+            float: left;
+            text-align: left;
+        }
+
+        .rq {
+            width: 100%;
+            height: 66px;
+            text-align: center;
+            font-size: 0px;
+            padding-top: 20px;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        .rq a,
+        .rq span {
+            display: inline-block;
+            line-height: 25px;
+            height: 25px;
+            padding: 0px 10px;
+            margin: 0px 2px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .rq span {
+            background-color: #C30310;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="contain">
+            <div class="btn-list">
+                <div class="btn-item">登录</div>
+                <div class="btn-item">|</div>
+                <div class="btn-item">注册</div>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="contain">
+            <div class="img">
+                <img src="images/国徽.png" />
+            </div>
+            <div class="text-list">
+                <div class="text">基层公开综合服务监管系统</div>
+                <div class="desc">Basic-level public comprehensive service supervision system</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="contain">
+            <a href="./index.html" style="color: #000">
+                <div class="nav-item active">首页</div>
+            </a>
+            <a href="./jcgk.html" style="color: #000">
+                <div class="nav-item">基层公开</div>
+            </a>
+            <a href="http://www.chengdu.gov.cn/chengdu/c131029/zcwj_list.shtml" target="_blank"style="color: #000">
+                <div class="nav-item">政策法规</div>
+            </a>
+            <a href="./bmfw.html" style="color: #000">
+                <div class="nav-item">便民服务</div>
+            </a>
+            <a href="./gthd_xinxiang.html" style="color: #000">
+                <div class="nav-item">沟通互动</div>
+            </a>
+            <a href="./jdgl.html" style="color: #000">
+                <div class="nav-item">监督管理</div>
+            </a>
+            <div class="nav-item">服务发展</div>
+
+            <div class="search-btn">
+                <input type="text" placeholder="请输入你想搜索的内容" />
+                <img src="images/icon-search.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="news">
+            <div class="news-right">
+                <div class="right-content">
+                    <div class="news-btn">
+                        <div class="btn-item active">统一用户管理</div>
+                    </div>
+                    <br />
+                    <div class="form-content">
+                        <div class="form-search">
+                            <form method="get" style="color:#474747; font-size:18px; border-spacing: 15px 10px">
+                                <tr>
+                                    <td>编号：</td>
+                                    <td><input type="text1" value="请输入用户编号" /></td>
+                                </tr>
+                                <tr>
+                                    <td>姓名：</td>
+                                    <td><input type="text1" value="请输入姓名名称" /></td>
+                                </tr>
+                                <tr>
+                                    <td>性别：</td>
+                                        <td><input type="radio" name="sex" checked="checked" />男
+                                            <input type="radio" name="sex" />女
+                                        </td>
+                                </tr>
+                                <tr><input type="submit" value="查询"/></tr>
+                                <tr><a href="./yhgl_xinzeng.html" target="_blank"><input type="button" value="新增用户" /></a></tr>
+                            </form>
+
+                        </div>
+
+                        <div class="form-table">
+                            <table style="width: 1050px; text-align: center; color:#474747; font-size:16px; border-spacing: 10px 10px">
+                                <tr style="background-color: #ddd">
+                                    <th>编号</th>
+                                    <th>姓名</th>
+                                    <th>性别</th>
+                                    <th>年龄</th>
+                                    <th>身份证号</th>
+                                    <th>电话号码</th>
+                                    <th>家庭住址</th>
+                                    <th>操作</th>
+                                </tr>
+                                <tr>
+                                    <td>000001</td>
+                                    <td>林彰</td>
+                                    <td>男</td>
+                                    <td>25</td>
+                                    <td>510141XXXXXXXX5794</td>
+                                    <td>137XXXX4587</td>
+                                    <td>四川省成都市郫都区XX街道XX小区</td>
+                                    <td>
+                                        <a role="button">删除</a>
+                                        <a role="button" href="./yhgl_xiugai.html">修改</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>000002</td>
+                                    <td>刘庭煜</td>
+                                    <td>男</td>
+                                    <td>26</td>
+                                    <td>510141XXXXXXXX4734</td>
+                                    <td>188XXXX8471</td>
+                                    <td>四川省成都市成华区XX街道XX小区</td>
+                                    <td>
+                                        <a role="button">删除</a>
+                                        <a role="button">修改</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>000003</td>
+                                    <td>杨嘉妮</td>
+                                    <td>女</td>
+                                    <td>24</td>
+                                    <td>510141XXXXXXXX2464</td>
+                                    <td>137XXXX4587</td>
+                                    <td>四川省成都市金牛区XX街道XX小区</td>
+                                    <td>
+                                        <a role="button">删除</a>
+                                        <a role="button">修改</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>000004</td>
+                                    <td>吴楚倩</td>
+                                    <td>女</td>
+                                    <td>30</td>
+                                    <td>510141XXXXXXXX3047</td>
+                                    <td>188XXXX2587</td>
+                                    <td>四川省成都市青羊区XX街道XX小区</td>
+                                    <td>
+                                        <a role="button">删除</a>
+                                        <a role="button">修改</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>000001</td>
+                                    <td>林彰</td>
+                                    <td>男</td>
+                                    <td>25</td>
+                                    <td>510141XXXXXXXX5794</td>
+                                    <td>137XXXX4587</td>
+                                    <td>四川省成都市郫都区XX街道XX小区</td>
+                                    <td>
+                                        <a role="button">删除</a>
+                                        <a role="button">修改</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>000002</td>
+                                    <td>刘庭煜</td>
+                                    <td>男</td>
+                                    <td>26</td>
+                                    <td>510141XXXXXXXX4734</td>
+                                    <td>188XXXX8471</td>
+                                    <td>四川省成都市成华区XX街道XX小区</td>
+                                    <td>
+                                        <a role="button">删除</a>
+                                        <a role="button">修改</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>000003</td>
+                                    <td>杨嘉妮</td>
+                                    <td>女</td>
+                                    <td>24</td>
+                                    <td>510141XXXXXXXX2464</td>
+                                    <td>137XXXX4587</td>
+                                    <td>四川省成都市金牛区XX街道XX小区</td>
+                                    <td>
+                                        <a role="button">删除</a>
+                                        <a role="button">修改</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>000004</td>
+                                    <td>吴楚倩</td>
+                                    <td>女</td>
+                                    <td>30</td>
+                                    <td>510141XXXXXXXX3047</td>
+                                    <td>188XXXX2587</td>
+                                    <td>四川省成都市青羊区XX街道XX小区</td>
+                                    <td>
+                                        <a role="button">删除</a>
+                                        <a role="button">修改</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rq">
+        <!-- 填充每一页的内容 -->
+        <!--用标签把每一项的内容包裹起来 -->
+        <a href="">&lt;</a>
+        <span>1</span>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">...</a>
+        <a href="">10</a>
+        <a href="">&gt;</a>
+    </div>
+
+
+    <div class="footer">
+        <div class="left">
+            蜀ICP备XXXXXXXX号
+        </div>
+        <div class="center">
+            |
+        </div>
+        <div class="right">
+            联系我们
+        </div>
+    </div>
+
+</body>
+
+</html>

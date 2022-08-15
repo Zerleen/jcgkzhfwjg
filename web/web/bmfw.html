@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>便民服务</title>
+
+    <style>
+        /*C30310*/
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: white;
+        }
+
+        .header {
+            height: 50px;
+            line-height: 50px;
+            background: #C30310;
+            color: white;
+        }
+
+        .header .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header .btn-list {
+            overflow: hidden;
+            float: right;
+        }
+
+        .header .btn-list .btn-item {
+            float: left;
+            padding: 0 5px;
+        }
+
+        .logo {
+            overflow: hidden;
+            background: #F5F5F5;
+        }
+
+        .logo .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 100px;
+        }
+
+        .logo .contain .img {
+            height: 100px;
+            float: left;
+        }
+
+        .logo .contain .img img {
+            height: 100px;
+        }
+
+        .logo .contain .text-list {
+            float: left;
+            font-size: 30px;
+            padding: 14px 0;
+        }
+
+        .logo .contain .text-list .text {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .logo .contain .text-list .desc {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .nav {
+            background: #F5F5F5;
+        }
+
+        .nav .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0px 5px;
+        }
+
+        .nav .nav-item {
+            float: left;
+            margin: 0 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 60px;
+        }
+
+        .nav .nav-item.active {
+            border-bottom: 6px solid #C30310;
+        }
+
+        .nav .search-btn {
+            float: right;
+            border: 1px solid #999;
+            background: white;
+            padding: 2px 10px;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-top: 18px;
+        }
+
+        .nav .search-btn input {
+            float: left;
+            border: none;
+            width: 150px;
+            height: 20px;
+        }
+
+        .nav .search-btn img {
+            float: right;
+            width: 20px;
+            height: 20px;
+        }
+
+
+        .main-content {
+            /* overflow: hidden;
+            width: 1100px;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            padding: 10px; */
+            overflow: hidden;
+            width: 1100px;
+            margin: 10px auto;
+        }
+
+        .main-content .page a,
+        .main-content .page span {
+            margin: 0 8px;
+            padding: 0 5px;
+            text-align: center;
+            font-size: 14px;
+            color: #474747;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .main-content .page span {
+            color: #fff;
+            background-color: #C30310;
+        }
+
+        .news {
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .news .news-right {
+            float: right;
+            width: 1100px;
+        }
+
+        .news .news-right .division {
+            position: absolute;
+            width: 1080px;
+            height: 0;
+
+            border: 1px dashed rgb(77, 77, 77);
+        }
+
+        .news .news-right .right-content{
+            overflow: hidden;
+            border:1px solid #ccc;
+            padding:10px;
+        }
+
+        .news .news-right .right-content .news-btn {
+            overflow: hidden;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item {
+            float: left;
+            line-height: 40px;
+            width: 300px;
+            text-align: center;
+            font-size: 20px;
+            background: #F5F5F5;
+            color: black;
+            font-weight: 700;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item.active {
+            background: #C30310;
+            color: white;
+        }
+
+        .news .news-right .right-content .news-btn .more-btn {
+            float: left;
+            line-height: 40px;
+            width: 120px;
+            text-align: right;
+            font-size: 12px;
+            background: #F5F5F5;
+            color: #999;
+            font-weight: 700;
+            padding-right: 20px;
+        }
+
+        .news .news-right .right-content .news-item {
+            padding: 15px 0;
+        }
+
+        .news .news-right .right-content .news-item .news-item-text1 {
+            font-size: 24px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        .news .news-right .right-content .news-item .news-item-text2 {
+            font-size: 14px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        .news .news-right .right-content .news-item .news-item-text3 {
+            font-size: 10px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        .footer {
+            overflow: hidden;
+            background: #C30310;
+            color: white;
+            line-height: 50px;
+        }
+
+        .footer .left {
+            width: 48%;
+            float: left;
+            text-align: right;
+        }
+
+        .footer .center {
+            width: 4%;
+            float: left;
+            text-align: center;
+        }
+
+        .footer .right {
+            width: 48%;
+            float: left;
+            text-align: left;
+        }
+
+        .rq {
+            width: 100%;
+            height: 66px;
+            text-align: center;
+            font-size: 0px;
+            padding-top: 20px;
+        }
+        a {
+            text-decoration: none
+        }
+        body {
+            margin: 0px;
+        }
+
+        .rq a,
+        .rq span {
+            display: inline-block;
+            line-height: 25px;
+            height: 25px;
+            padding: 0px 10px;
+            margin: 0px 2px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .rq span {
+            background-color: #C30310;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="contain">
+            <div class="btn-list">
+                <div class="btn-item">登录</div>
+                <div class="btn-item">|</div>
+                <div class="btn-item">注册</div>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="contain">
+            <div class="img">
+                <img src="images/国徽.png" />
+            </div>
+            <div class="text-list">
+                <div class="text">基层公开综合服务监管系统</div>
+                <div class="desc">Basic-level public comprehensive service supervision system</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="contain">
+            <a href="./index.html" style="color: #000">
+                <div class="nav-item">首页</div>
+            </a>
+            <a href="./jcgk.html" style="color: #000">
+                <div class="nav-item">基层公开</div>
+            </a>
+            <a href="http://www.chengdu.gov.cn/chengdu/c131029/zcwj_list.shtml" target="_blank"style="color: #000">
+                <div class="nav-item">政策法规</div>
+            </a>
+            <a href="./bmfw.html" style="color: #000">
+                <div class="nav-item active">便民服务</div>
+            </a>
+            <a href="./gthd_xinxiang.html" style="color: #000">
+                <div class="nav-item">沟通互动</div>
+            </a>
+            <a href="./jdgl.html" style="color: #000">
+                <div class="nav-item">监督管理</div>
+            </a>
+            <div class="nav-item">服务发展</div>
+
+            <div class="search-btn">
+                <input type="text" placeholder="请输入你想搜索的内容" />
+                <img src="images/icon-search.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <div class="news">
+
+            <div class="news-right">
+                <div class="right-content">
+                    <div class="news-btn">
+                        <div class="btn-item active">群众满意度评价公示</div>
+                        <div class="more-btn">更多>></div>
+                    </div>
+                    <div class="news-item">
+                        <a href="https://baijiahao.baidu.com/s?id=1726989564067395497&wfr=spider&for=pc" target="_blank">
+                        <div class="news-item-text1">四川省电信服务质量用户满意度指数测评结果公告</div>
+                        <div class="news-item-text2">为贯彻落实以人民为中心的发展思想，努力满足广大人民群众日益增长的信息通信服务需求，维护电信用户的合法权益，促进我省基础电信企业不断提升通信服务质量和水平</div>
+                        <div class="news-item-text3">2022-03-11</div></a>
+                        <div class="division"></div>
+                        <br/><br/>
+                        <a href="https://baijiahao.baidu.com/s?id=1736520522634610608&wfr=spider&for=pc" target="_blank">
+                        <div class="news-item-text1">三降三升群众满意度98%四川省禁毒工作综合考评连续4年居全国前列</div>
+                        <div class="news-item-text2">三降三升群众满意度98%四川省禁毒工作综合考评连续4年居全国前列</div>
+                        <div class="news-item-text3">2022-06-24</div></a>
+                        <div class="division"></div>
+                        <br/><br/>
+                        <a href="https://sichuan.scol.com.cn/ggxw/202201/58401798.html" target="_blank">
+                        <div class="news-item-text1">四川平安建设群众满意度连续5年居全国第一方阵</div>
+                        <div class="news-item-text2">四川平安建设群众满意度连续5年居全国第一方阵</div>
+                        <div class="news-item-text3">2022-01-25</div></a>
+                        <div class="division"></div>
+                        <br/><br/>
+                        <a href="https://baijiahao.baidu.com/s?id=1727383975345717678&wfr=spider&for=pc" target="_blank">
+                        <div class="news-item-text1">四川发布2021年度消费者满意度指数报告</div>
+                        <div class="news-item-text2">四川省保护消费者权益委员会召开“315”国际消费者权益日纪念座谈会</div>
+                        <div class="news-item-text3">2022-03-16</div></a>
+                        <div class="division"></div>
+                        <br/><br/>
+                        <a href="https://baijiahao.baidu.com/s?id=1716858011008691814&wfr=spider&for=pc" target="_blank">
+                        <div class="news-item-text1">查找“城市病” 四川省城市体检试点工作已收到45000份居民满意度调查问卷</div>
+                        <div class="news-item-text2">查找“城市病” 四川省城市体检试点工作已收到45000份居民满意度调查问卷</div>
+                        <div class="news-item-text3">2021-11-19</div></a>
+                        <div class="division"></div>
+                        <br/><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rq">
+        <!-- 填充每一页的内容 -->
+        <!--用标签把每一项的内容包裹起来 -->
+        <a href="">&lt;</a>
+        <span>1</span>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">&gt;</a>
+    </div>
+
+
+    <div class="footer">
+        <div class="left">
+            蜀ICP备XXXXXXXX号
+        </div>
+        <div class="center">
+            |
+        </div>
+        <div class="right">
+            联系我们
+        </div>
+    </div>
+
+</body>
+
+</html>
