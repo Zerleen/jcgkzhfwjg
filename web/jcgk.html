@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>基层公开</title>
+
+    <style>
+        /*C30310*/
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: white;
+        }
+
+        .header {
+            height: 50px;
+            line-height: 50px;
+            background: #C30310;
+            color: white;
+        }
+
+        .header .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header .btn-list {
+            overflow: hidden;
+            float: right;
+        }
+
+        .header .btn-list .btn-item {
+            float: left;
+            padding: 0 5px;
+        }
+
+        .logo {
+            overflow: hidden;
+            background: #F5F5F5;
+        }
+
+        .logo .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 100px;
+        }
+
+        .logo .contain .img {
+            height: 100px;
+            float: left;
+        }
+
+        .logo .contain .img img {
+            height: 100px;
+        }
+
+        .logo .contain .text-list {
+            float: left;
+            font-size: 30px;
+            padding: 14px 0;
+        }
+
+        .logo .contain .text-list .text {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .logo .contain .text-list .desc {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .nav {
+            background: #F5F5F5;
+        }
+
+        .nav .contain {
+            width: 1100px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0px 5px;
+        }
+
+        .nav .nav-item {
+            float: left;
+            margin: 0 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 60px;
+        }
+
+        .nav .nav-item.active {
+            border-bottom: 6px solid #C30310;
+        }
+
+        .nav .search-btn {
+            float: right;
+            border: 1px solid #999;
+            background: white;
+            padding: 2px 10px;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-top: 18px;
+        }
+
+        .nav .search-btn input {
+            float: left;
+            border: none;
+            width: 150px;
+            height: 20px;
+        }
+
+        .nav .search-btn img {
+            float: right;
+            width: 20px;
+            height: 20px;
+        }
+
+
+        .main-content {
+            overflow: hidden;
+            width: 1100px;
+            margin: 10px auto;
+        }
+
+        .main-content .banner {
+            overflow: hidden;
+        }
+
+        .main-content .banner .banner-img {
+            width: 850px;
+            height: 208px;
+            float: left;
+            display: block;
+        }
+
+        .main-content .banner .icon-btn-list {
+            width: 240px;
+            float: right;
+            border: 1px solid #ccc;
+            background: white;
+        }
+
+        .main-content .banner .icon-btn-list .icon-btn-item {
+            margin: 14px;
+            background: #F5F5F5;
+            overflow: hidden;
+            padding: 10px 40px;
+            color: #C30310;
+        }
+
+        .main-content .banner .icon-btn-list .icon-btn-item img {
+            width: 30px;
+            height: 30px;
+            float: left;
+        }
+
+        .main-content .banner .icon-btn-list .icon-btn-item .text {
+            float: left;
+            line-height: 30px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .main-content .page a,
+        .main-content .page span {
+            margin: 0 8px;
+            padding: 0 5px;
+            text-align: center;
+            font-size: 14px;
+            color: #474747;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .main-content .page span {
+            color: #fff;
+            background-color: #C30310;
+        }
+
+        .news {
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .news .news-right {
+            float: right;
+            width: 1100px;
+        }
+
+        .news .news-right .division {
+            position: absolute;
+            width: 1080px;
+            height: 0;
+
+            border: 1px dashed rgb(77, 77, 77);
+        }
+
+        .news .news-right .right-content {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .news .news-right .right-content .news-btn {
+            overflow: hidden;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item {
+            float: left;
+            color: #666;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 4px 5px;
+            margin: 0 5px;
+        }
+
+        .news .news-right .right-content .news-btn .btn-item.active {
+            color: #C30310;
+            border-bottom: 2px solid #C30310;
+        }
+
+        .news .news-right .right-content .news-item {
+            padding: 15px 0;
+        }
+
+        .news .news-right .right-content .news-item .news-item-text1 {
+            font-size: 24px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        .news .news-right .right-content .news-item .news-item-text2 {
+            font-size: 14px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        .news .news-right .right-content .news-item .news-item-text3 {
+            font-size: 10px;
+            color: #000;
+            padding: 5px 0;
+        }
+
+        .news .news-right .import-list {
+            padding: 20px 0 10px;
+            overflow: hidden;
+        }
+
+        .news .news-right .import-list .import-title {
+            float: left;
+            width: 80px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 32px;
+            font-weight: 700;
+            padding: 10px 20px;
+            background: #C30310;
+            color: white;
+        }
+
+        .news .news-right .import-list .import-item {
+            float: left;
+            font-size: 12px;
+            text-align: center;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+        }
+
+        .news .news-right .import-list .import-item img {
+            height: 50px;
+            display: block;
+        }
+
+        .news .news-right .import-list .import-item p {
+            width: 60px;
+            padding-left: 4px;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .footer {
+            overflow: hidden;
+            background: #C30310;
+            color: white;
+            line-height: 50px;
+        }
+
+        .footer .left {
+            width: 48%;
+            float: left;
+            text-align: right;
+        }
+
+        .footer .center {
+            width: 4%;
+            float: left;
+            text-align: center;
+        }
+
+        .footer .right {
+            width: 48%;
+            float: left;
+            text-align: left;
+        }
+
+
+        /* 分页 */
+        /* 给rq盒子添加宽度、高度和背景颜色 */
+        .rq {
+            width: 100%;
+            height: 66px;
+            /* 把每一项都设置水平居中 */
+            text-align: center;
+            /* 去掉每项之间产生的空隙 */
+            font-size: 0px;
+            /* 让里面的每一项与外边的盒子的顶部有间隙 */
+            padding-top: 20px;
+        }
+
+        /* 去掉body自带的默认外边距 */
+        body {
+            margin: 0px;
+        }
+
+        /* 给每一项设置边框 */
+        .rq a,
+        .rq span {
+            /* 把a和span标签转化为行内块级元素 */
+            display: inline-block;
+            /* 为每一项设置高、行高 */
+            line-height: 25px;
+            height: 25px;
+            /* 为每一项设置内外边距 */
+            padding: 0px 10px;
+            margin: 0px 2px;
+            border: 1px solid #ddd;
+            /* 设置字体大小 */
+            font-size: 14px;
+            /* 设置字体颜色 */
+            color: #000;
+            /* 去掉下划线 */
+            text-decoration: none;
+        }
+
+        /* 单独控制span标签的背景颜色 */
+        .rq span {
+            background-color: #C30310;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="contain">
+            <div class="btn-list">
+                <div class="btn-item">登录</div>
+                <div class="btn-item">|</div>
+                <div class="btn-item">注册</div>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="contain">
+            <div class="img">
+                <img src="images/国徽.png" />
+            </div>
+            <div class="text-list">
+                <div class="text">基层公开综合服务监管系统</div>
+                <div class="desc">Basic-level public comprehensive service supervision system</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="contain">
+            <a href="./index.html" style="color: #000;">
+                <div class="nav-item">首页</div>
+            </a>
+            <a href="./jcgk.html" style="color: #000;">
+                <div class="nav-item active">基层公开</div>
+            </a>
+            <a href="./zcfg.html" style="color: #000;">
+                <div class="nav-item">政策法规</div>
+            </a>
+            <a href="./bmfw.html" style="color: #000;">
+                <div class="nav-item">便民服务</div>
+            </a>
+            <a href="./gthd_xinxiang.html" style="color: #000;">
+                <div class="nav-item">沟通互动</div>
+            </a>
+            <a href="./jdgl.html" style="color: #000;">
+                <div class="nav-item">监督管理</div>
+            </a>
+            <div class="nav-item">服务发展</div>
+
+            <div class="search-btn">
+                <input type="text" placeholder="请输入你想搜索的内容" />
+                <img src="images/icon-search.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <div class="news">
+
+            <div class="news-right">
+                <div class="right-content">
+                    <div class="news-btn">
+                        <div class="btn-item active">党务村务公开</div>
+                        <div class="btn-item">热点搜集公开</div>
+                    </div>
+                    <div class="news-item">
+                        <a href="http://www.chengdu.gov.cn/chengdu/zwyw/2022-08/12/content_aaecbca4bf2e49429322f9c95f7dd337.shtml"
+                            target="_blank">
+                            <div class="news-item-text1">市农业农村局副局长姚光贵值守成都市政务服务中心</div>
+                            <div class="news-item-text2">市农业农村局副局长姚光贵值守成都市政务服务中心</div>
+                            <div class="news-item-text3">2022-08-12</div>
+                        </a>
+                        <div class="division"></div>
+                        <br /><br />
+                        <a href="http://gk.chengdu.gov.cn/govInfoPub/detail.action?id=3278729&tn=11" target="_blank">
+                            <div class="news-item-text1">成都市2021年政府信息公开工作年度报告</div>
+                            <div class="news-item-text2">成都市2021年政府信息公开工作年度报告</div>
+                            <div class="news-item-text3">2022-03-10</div>
+                        </a>
+                        <div class="division"></div>
+                        <br /><br />
+                        <a href="http://www.chengdu.gov.cn/chengdu/c147312/jjcdsswgh.shtml" target="_blank">
+                            <div class="news-item-text1">聚焦成都“十四五”规划</div>
+                            <div class="news-item-text2">成都市国民经济和社会发展五年规划</div>
+                            <div class="news-item-text3">2022-04-18</div>
+                        </a>
+                        <div class="division"></div>
+                        <br /><br />
+                        <a href="http://www.chengdu.gov.cn/chengdu/c135620/cdyqzjz.shtml" target="_blank">
+                            <div class="news-item-text1">四川省新冠肺炎疫情防控信息公开</div>
+                            <div class="news-item-text2">四川省新冠肺炎疫情防控信息公开</div>
+                            <div class="news-item-text3">2022-08-15</div>
+                        </a>
+                        <div class="division"></div>
+                        <br /><br />
+                        <a href="http://cddrc.chengdu.gov.cn/cdfgw/zccshb2022/zccshb_index.shtml" target="_blank">
+                            <div class="news-item-text1">稳增长稳市场主体保就业</div>
+                            <div class="news-item-text2">政策措施汇编</div>
+                            <div class="news-item-text3">2022-08-15</div>
+                        </a>
+                        <div class="division"></div>
+                        <br /><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rq">
+            <!-- 填充每一页的内容 -->
+            <!-- 用标签把每一项的内容包裹起来 -->
+            <a href="">&lt;</a>
+            <span>1</span>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+            <a href="">5</a>
+            <a href="">&gt;</a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="left">
+            蜀ICP备XXXXXXXX号
+        </div>
+        <div class="center">
+            |
+        </div>
+        <div class="right">
+            联系我们
+        </div>
+    </div>
+
+</body>
+
+</html>
